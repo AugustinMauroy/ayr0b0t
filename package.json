@@ -1,0 +1,19 @@
+{
+  "name": "ayr0b0t",
+  "version": "1.0.0",
+  "description": "minecraft IA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "minecraft-data": "^3.41.0",
+    "mineflayer": "^4.10.1",
+    "mineflayer-pathfinder": "^2.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0"
+  }
+}
