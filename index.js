@@ -5,6 +5,7 @@ const config = require('./constant.js');
 const commander = require('./plugins/commander.js');
 const follower = require('./plugins/follower.js');
 const lumberJack = require('./plugins/lumberJack.js');
+const selfDefence = require('./plugins/selfDefence.js');
 
 const bot = mineflayer.createBot({
 	host: config.host,
@@ -17,6 +18,7 @@ bot.loadPlugin(autoeat);
 bot.loadPlugin(commander);
 bot.loadPlugin(follower);
 bot.loadPlugin(lumberJack);
+bot.loadPlugin(selfDefence);
 
 bot.once('spawn', () => {
 	const mcData = require('minecraft-data')(bot.version);
