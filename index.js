@@ -14,17 +14,18 @@ bot.loadPlugin(pathfinder);
 bot.loadPlugin(commander);
 bot.loadPlugin(follower);
 
-const mcData = require('minecraft-data')(bot.version);
-const movements = new Movements(bot, mcData);
-movements.scafoldingBlocks = [];
+bot.once('spawn', () => {
+	const mcData = require('minecraft-data')(bot.version);
+	const defaultMove = new Movements(bot, mcData);
+	defaultMove.scafoldingBlocks = [];
 
-bot.pathfinder.setMovements(movements);
-
-setInterval(() => {
-	if (bot.follow.following) {
-		const { x: targetX, y: targetY, z: targetZ } = bot.follow.target.position;
-
-		const goal = new goals.GoalBlock(targetX, targetY, targetZ);
-		bot.pathfinder.setGoal(goal);
-	}
-}, 500);
+	bot.pathfinder.setMovements(defaultMove);
+	setInterval(() => {
+		if (bot.follow.following) {
+			
+			const { x: targetX, y: targetY, z: targetZ } = bot.follow.target.position;
+			const goal = new goals.GoalBlock(targetX, targetY, targetZ, 1);
+			bot.pathfinder.setGoal(goal);
+		}
+	}, 500);
+});
