@@ -1,6 +1,6 @@
 const config = {
 	host: 'localhost',
-	port: 58667,       
+	port: 3000,      
 	username: 'Ayr0b0t',
 	master: 'ACT_Team',
 };

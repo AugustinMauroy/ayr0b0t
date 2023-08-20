@@ -10,7 +10,7 @@ function inject(bot) {
 		if (username === config.master) {
 			if (message.startsWith(config.username + ' ')) {
 				const command = message.split(' ')[1];
-				const arg = message? message.match(ARG_REGEX) : null;
+				const arg = message ? message.match(ARG_REGEX) : null;
 
 				if (command === 'echo') {
 					const echo = message.split(' ')[2];
@@ -29,10 +29,13 @@ function inject(bot) {
 					}
 				} else if (command === 'stop-follow') {
 					bot.follow.stop();
+				} else if (command === 'cuttrees') {
+					const radius = bot.lumberJack.defaultRadius;
+					bot.lumberJack.cutTreesInRadius(radius);
 				} else {
 					bot.chat('Unknown command');
 				}
-			}
-		};
+        	};
+		}
 	});
 };

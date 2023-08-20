@@ -3,8 +3,7 @@ module.exports = inject;
 function inject(bot) {
     
 	class Follow {
-		constructor(bot) {
-			this.bot = bot;
+		constructor() {
 			this.target = null;
 			this.following = false;
 		}
