@@ -9,9 +9,12 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "i": "^0.3.7",
     "minecraft-data": "^3.41.0",
     "mineflayer": "^4.10.1",
-    "mineflayer-pathfinder": "^2.4.4"
+    "mineflayer-auto-eat": "^3.3.6",
+    "mineflayer-pathfinder": "^2.4.4",
+    "npm": "^9.8.1"
   },
   "devDependencies": {
     "eslint": "^8.46.0"

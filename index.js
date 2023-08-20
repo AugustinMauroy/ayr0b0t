@@ -1,5 +1,6 @@
 const mineflayer = require('mineflayer');
 const { pathfinder, Movements, goals  } = require('mineflayer-pathfinder');
+const autoeat = require('mineflayer-auto-eat').plugin;
 const config = require('./constant.js');
 const commander = require('./plugins/commander.js');
 const follower = require('./plugins/follower.js');
@@ -12,6 +13,7 @@ const bot = mineflayer.createBot({
 });
 
 bot.loadPlugin(pathfinder);
+bot.loadPlugin(autoeat);
 bot.loadPlugin(commander);
 bot.loadPlugin(follower);
 bot.loadPlugin(lumberJack);
