@@ -30,9 +30,8 @@ bot.once('spawn', () => {
 	bot.pathfinder.setMovements(defaultMove);
 	setInterval(() => {
 		if (bot.follow.following) {
-			
-			const { x: targetX, y: targetY, z: targetZ } = bot.follow.target.position;
-			const goal = new goals.GoalBlock(targetX, targetY, targetZ);
+			const { x, y, z } = bot.follow.target.position;
+			const goal = new goals.GoalBlock(x, y, z);
 			bot.pathfinder.setGoal(goal);
 		}
 	}, 500);

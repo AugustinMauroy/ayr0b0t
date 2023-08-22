@@ -22,6 +22,7 @@ function inject(bot) {
 			if (!this.following) {
 				bot.chat('I am not following anyone');
 			}
+			bot.chat('Stopped following');
 			this.following = false;
 		}
 	}

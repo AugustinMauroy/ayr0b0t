@@ -1,3 +1,4 @@
+const { goals } = require('mineflayer-pathfinder');
 const { warn } = require('../utils/loging.js');
 const config = require('../constant.js');
 
@@ -32,6 +33,13 @@ function inject(bot) {
 				} else if (command === 'cuttrees') {
 					const radius = bot.lumberJack.defaultRadius;
 					bot.lumberJack.cutTreesInRadius(radius);
+				} else if (command === 'go-to') {
+					// full text is 'go-to --1 --2 --3'
+					const x = parseInt(arg[0].split('--')[1]);
+					const y = parseInt(arg[1].split('--')[1]);
+					const z = parseInt(arg[2].split('--')[1]);
+					const goal = new goals.GoalBlock(x, y, z);
+					bot.pathfinder.setGoal(goal);
 				} else {
 					bot.chat('Unknown command');
 				}
